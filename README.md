@@ -43,3 +43,9 @@ On Windows use the Microsoft Visual C++ Build Tools on the command line by runni
 #!basic
 > cl /I .. ../main.c hid.c /link /out:usbhidtool.exe SetupAPI.lib 
 ```
+
+### License ###
+
+Copyright 2017 [Open Acoustic Devices](http://www.openacousticdevices.info/).
+
+[MIT license](http://www.openacousticdevices.info/license).
