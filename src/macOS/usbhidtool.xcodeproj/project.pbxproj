@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE6E7FBA1F08FF4800B6C928 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6E7FB91F08FF4800B6C928 /* main.c */; };
-		CE6E7FBC1F08FF5300B6C928 /* hid.c in Sources */ = {isa = PBXBuildFile; fileRef = CE6E7FBB1F08FF5300B6C928 /* hid.c */; };
+		CE112A70215EA5E6004BCD7B /* hid.c in Sources */ = {isa = PBXBuildFile; fileRef = CE112A6F215EA5E6004BCD7B /* hid.c */; };
+		CE112A73215EA5F0004BCD7B /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = CE112A71215EA5F0004BCD7B /* main.c */; };
 		CE6E7FBF1F08FF6A00B6C928 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6E7FBE1F08FF6A00B6C928 /* IOKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,10 +25,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE112A6F215EA5E6004BCD7B /* hid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hid.c; sourceTree = SOURCE_ROOT; };
+		CE112A71215EA5F0004BCD7B /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = ../../main.c; sourceTree = "<group>"; };
+		CE112A72215EA5F0004BCD7B /* hidapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hidapi.h; path = ../../hidapi.h; sourceTree = "<group>"; };
 		CE6E7FAE1F08FF1200B6C928 /* usbhidtool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = usbhidtool; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE6E7FB81F08FF3C00B6C928 /* hidapi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = hidapi.h; path = ../../../hidapi.h; sourceTree = "<group>"; };
-		CE6E7FB91F08FF4800B6C928 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = ../../../main.c; sourceTree = "<group>"; };
-		CE6E7FBB1F08FF5300B6C928 /* hid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hid.c; path = ../../hid.c; sourceTree = "<group>"; };
 		CE6E7FBE1F08FF6A00B6C928 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -64,9 +64,9 @@
 		CE6E7FB01F08FF1200B6C928 /* usbhidtool */ = {
 			isa = PBXGroup;
 			children = (
-				CE6E7FB81F08FF3C00B6C928 /* hidapi.h */,
-				CE6E7FBB1F08FF5300B6C928 /* hid.c */,
-				CE6E7FB91F08FF4800B6C928 /* main.c */,
+				CE112A72215EA5F0004BCD7B /* hidapi.h */,
+				CE112A71215EA5F0004BCD7B /* main.c */,
+				CE112A6F215EA5E6004BCD7B /* hid.c */,
 			);
 			path = usbhidtool;
 			sourceTree = "<group>";
@@ -137,8 +137,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE6E7FBA1F08FF4800B6C928 /* main.c in Sources */,
-				CE6E7FBC1F08FF5300B6C928 /* hid.c in Sources */,
+				CE112A73215EA5F0004BCD7B /* main.c in Sources */,
+				CE112A70215EA5E6004BCD7B /* hid.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +271,7 @@
 				CE6E7FB71F08FF1200B6C928 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

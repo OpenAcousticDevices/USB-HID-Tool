@@ -4,6 +4,6 @@ del *.obj
 del *.exp
 del *.lib
 
-move usbhidtool.exe ../../bin/windows/usbhidtool.exe
+move usbhidtool.exe ../../bin/windows32/usbhidtool.exe
 
 
