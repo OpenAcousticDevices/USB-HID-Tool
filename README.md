@@ -8,7 +8,7 @@ Command line arguments provide the VID and PID and the contents of the 64 byte p
 
 ```
 > ./usbhidtool 0x10C4 0x0002 0x00 0x01
-01 2b 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ###### Your 
+01 2b 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  
 ```
 
 From Node.js or Python the command line tool can be called as a child process.
