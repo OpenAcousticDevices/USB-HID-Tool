@@ -1,4 +1,4 @@
-cl /I .. ../main.c hid.c /link /out:usbhidtool.exe SetupAPI.lib
+cl /I . ../main.c hid.c /link /out:usbhidtool.exe SetupAPI.lib
 
 del *.obj
 del *.exp

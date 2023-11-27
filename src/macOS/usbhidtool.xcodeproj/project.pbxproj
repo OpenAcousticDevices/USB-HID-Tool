@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		CE112A70215EA5E6004BCD7B /* hid.c in Sources */ = {isa = PBXBuildFile; fileRef = CE112A6F215EA5E6004BCD7B /* hid.c */; };
-		CE112A73215EA5F0004BCD7B /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = CE112A71215EA5F0004BCD7B /* main.c */; };
 		CE6E7FBF1F08FF6A00B6C928 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6E7FBE1F08FF6A00B6C928 /* IOKit.framework */; };
+		CEBB52E42B0E55F1004FDE1F /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = CEBB52E32B0E55F1004FDE1F /* main.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,10 +26,11 @@
 
 /* Begin PBXFileReference section */
 		CE112A6F215EA5E6004BCD7B /* hid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hid.c; sourceTree = SOURCE_ROOT; };
-		CE112A71215EA5F0004BCD7B /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = ../../main.c; sourceTree = "<group>"; };
-		CE112A72215EA5F0004BCD7B /* hidapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hidapi.h; path = ../../hidapi.h; sourceTree = "<group>"; };
 		CE6E7FAE1F08FF1200B6C928 /* usbhidtool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = usbhidtool; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6E7FBE1F08FF6A00B6C928 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		CEBB52E02B0E55D8004FDE1F /* hidapi_darwin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hidapi_darwin.h; sourceTree = SOURCE_ROOT; };
+		CEBB52E32B0E55F1004FDE1F /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = ../main.c; sourceTree = "<group>"; };
+		CECF89F22B11193B00DB0CF5 /* hidapi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hidapi.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +48,10 @@
 		CE6E7FA51F08FF1200B6C928 = {
 			isa = PBXGroup;
 			children = (
-				CE6E7FB01F08FF1200B6C928 /* usbhidtool */,
+				CE112A6F215EA5E6004BCD7B /* hid.c */,
+				CEBB52E32B0E55F1004FDE1F /* main.c */,
+				CECF89F22B11193B00DB0CF5 /* hidapi.h */,
+				CEBB52E02B0E55D8004FDE1F /* hidapi_darwin.h */,
 				CE6E7FAF1F08FF1200B6C928 /* Products */,
 				CE6E7FBD1F08FF6A00B6C928 /* Frameworks */,
 			);
@@ -59,16 +63,6 @@
 				CE6E7FAE1F08FF1200B6C928 /* usbhidtool */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		CE6E7FB01F08FF1200B6C928 /* usbhidtool */ = {
-			isa = PBXGroup;
-			children = (
-				CE112A72215EA5F0004BCD7B /* hidapi.h */,
-				CE112A71215EA5F0004BCD7B /* main.c */,
-				CE112A6F215EA5E6004BCD7B /* hid.c */,
-			);
-			path = usbhidtool;
 			sourceTree = "<group>";
 		};
 		CE6E7FBD1F08FF6A00B6C928 /* Frameworks */ = {
@@ -105,22 +99,23 @@
 		CE6E7FA61F08FF1200B6C928 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
 				ORGANIZATIONNAME = "University of Oxford";
 				TargetAttributes = {
 					CE6E7FAD1F08FF1200B6C928 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = Y95UCAW2A9;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = CE6E7FA91F08FF1200B6C928 /* Build configuration list for PBXProject "usbhidtool" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CE6E7FA51F08FF1200B6C928;
 			productRefGroup = CE6E7FAF1F08FF1200B6C928 /* Products */;
@@ -137,7 +132,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE112A73215EA5F0004BCD7B /* main.c in Sources */,
+				CEBB52E42B0E55F1004FDE1F /* main.c in Sources */,
 				CE112A70215EA5E6004BCD7B /* hid.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,23 +150,34 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -203,23 +209,34 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -237,8 +254,9 @@
 		CE6E7FB61F08FF1200B6C928 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = Y95UCAW2A9;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -246,8 +264,9 @@
 		CE6E7FB71F08FF1200B6C928 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = Y95UCAW2A9;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

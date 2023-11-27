@@ -46,18 +46,6 @@ int main(int argc, char **argv) {
     
     uint16_t pid = strtol(argv[2], NULL, 0);
     
-    /* Set any input buffer values */
-    
-    for (int i = 3; i < argc; i += 1) {
-        
-        if (i - 3 < PACKETSIZE) {
-        
-            outputBuffer[i - 3] = strtol(argv[i], NULL, 0);
-            
-        }
-        
-    }
-    
     /* Connect to device */
 
     device_info = hid_enumerate(vid, pid);
@@ -68,19 +56,38 @@ int main(int argc, char **argv) {
         
         if (device != NULL) {
             
-            hid_write(device, outputBuffer, PACKETSIZE);
+            int i = 3;
             
-            int length = hid_read_timeout(device, inputBuffer, PACKETSIZE, 100);
-            
-            if (length == PACKETSIZE) {
+            while (i < argc) {
                 
-                printBuffer(inputBuffer);
+                int j = 0;
                 
-            } else {
+                memset(outputBuffer, 0, PACKETSIZE);
                 
-                printf("ERROR: Incorrect response from device\n");
-
+                while (j < PACKETSIZE && i < argc) {
+                    
+                    outputBuffer[j] = strtol(argv[i], NULL, 0);
+                    
+                    i += 1;
+                    j += 1;
+                    
+                }
+                
+                hid_write(device, outputBuffer, PACKETSIZE);
+                
+                int length = hid_read_timeout(device, inputBuffer, PACKETSIZE, 100);
+                
+                if (length != PACKETSIZE) {
+                    
+                    printf("ERROR: Incorrect response from device\n");
+                    
+                    return 0;
+                    
+                }
+                
             }
+                    
+            printBuffer(inputBuffer);
             
             hid_close(device);
             

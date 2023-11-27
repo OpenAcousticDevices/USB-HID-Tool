@@ -11,6 +11,8 @@ Command line arguments provide the VID and PID and the contents of the 64 byte p
 01 2b 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  
 ```
 
+If more than 64 bytes are provided, mutiple packets will be sent with a read request between each packet. The final packet returned from the device is reported in the command line.
+
 From Node.js or Python the command line tool can be called as a child process.
 
 ### Linux ###
